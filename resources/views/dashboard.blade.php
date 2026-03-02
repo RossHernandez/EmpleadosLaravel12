@@ -7,11 +7,8 @@
 
 
     <div>
-        @include('components.tabla-principal', ['empleadosList' => $empleadosList ])
+        @include('empleados.tabla-principal', ['empleadosList' => $empleadosList ])
     </div>
-
-
-
 
 
 </x-app-layout>

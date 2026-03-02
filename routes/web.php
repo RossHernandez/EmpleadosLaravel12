@@ -20,11 +20,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/obtener/empleados', [EmpleadosController::class, 'index']);
-    Route::get('/empleados/{empleado}', [EmpleadosController::class, 'show']); /* ->name('show');*/
+    Route::get('/empleados/{empleado}', [EmpleadosController::class, 'show'])->name('empleado.proyeccion');
 
 });
 
-Route::get('/tablero', [EmpleadosController::class, 'tableroPublico'])
-    ->name('empleados.tablero');
+Route::get('/tablero', [EmpleadosController::class, 'tableroEmpleados'])->name('empleados.tablero');
 
 require __DIR__.'/auth.php';
